@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var oauthServer = require('express-oauth-server');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -21,6 +22,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Add OAuth server.
+app.oauth = new oauthServer({
+  model: require('./model')
+});
 
 app.use('/', index);
 app.use('/users', users);
@@ -41,6 +47,20 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+// Post token.
+app.post('/oauth/token', app.oauth.token());
+
+// Get secret.
+app.get('/secret', app.oauth.authenticate(), function(req, res) {
+  // Will require a valid access_token.
+  res.send('Secret area');
+});
+
+app.get('/public', function(req, res) {
+  // Does not require an access_token.
+  res.send('Public area');
 });
 
 module.exports = app;
