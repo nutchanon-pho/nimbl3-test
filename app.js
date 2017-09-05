@@ -42,4 +42,8 @@ app.get('/public', function(req, res) {
   res.send('Public area');
 });
 
+app.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
 module.exports = app;
