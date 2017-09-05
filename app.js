@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var oauthServer = require('express-oauth-server');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -22,25 +23,27 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+// Add OAuth server.
+app.oauth = new oauthServer({
+  model: require('./model')
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// Post token.
+app.post('/oauth/token', app.oauth.token());
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+// Get secret.
+app.get('/secret', app.oauth.authenticate(), function(req, res) {
+  // Will require a valid access_token.
+  res.send('Secret area');
+});
+
+app.get('/public', function(req, res) {
+  // Does not require an access_token.
+  res.send('Public area');
+});
+
+app.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
 });
 
 module.exports = app;
