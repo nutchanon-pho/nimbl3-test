@@ -6,7 +6,8 @@ const pgp = require('pg-promise')();
 const uuidv4 = require('uuid/v4');
 
 // 'postgres://postgres:@localhost/postgres'
-const pg = pgp(process.env.DATABASE_URL); // database instance;
+// const pg = pgp(process.env.DATABASE_URL); // database instance;
+const pg = pgp('postgres://postgres:@localhost/postgres'); // database instance;
 
 /*
  * Get access token.
