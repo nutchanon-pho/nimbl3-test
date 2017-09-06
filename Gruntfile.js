@@ -5,7 +5,10 @@ module.exports = function (grunt) {
         // JS TASKS ================================================================
         // check all js files for errors
         jshint: {
-            all: ['public/js/*.js']
+            all: ['public/js/*.js'],
+            options: {
+                'esversion': 6,
+            }
         },
 
         // take all the js files and minify them into app.min.js
