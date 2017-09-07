@@ -14,6 +14,8 @@ body {
   width: 246px !important;
   overflow: hidden;
   background-color: #73247E;
+  position: absolute;
+  height: 3000px;
 }
 
 .navbar {
@@ -81,13 +83,15 @@ body {
   color: #626272;font-size: 11px;font-weight: 600;line-height: 14px;
 }
 
-.navmenu-default .navmenu-nav>li>a {
+.navmenu-default .navmenu-nav>li>a, .navmenu-default .navmenu-nav>li>a:hover  {
   color: #D58EDD;
+  height: 67px;
+  padding-top: 24px;
 }
 
 .navmenu-default .navmenu-nav>.active>a, .navmenu-default .navmenu-nav>.active>a:hover {
-  background-color: #601C71;
-  color: white;
+  background-color: rgba(76,19,103,0.5) !important;
+  color: white !important;
   height: 67px;
   padding-top: 24px;
 }
@@ -100,4 +104,17 @@ body {
   width:17px;
   margin-right:20px;
   margin-top: -2px;
+}
+
+.active > .color-bar {
+  width: 6px;
+  height: 41px;
+  background-color: white;
+  display: inline-block;
+  top: 13px;
+  position: absolute;
+  z-index: 1000;
+  /* border-radius: 30%; */
+  border-top-right-radius: 2em;
+  border-radius: 0 17px 17px 0;
 }
