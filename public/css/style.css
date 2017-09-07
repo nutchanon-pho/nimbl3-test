@@ -1,9 +1,91 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'montserrat', Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+html, body {
+  height: 100%;
+}
+body {
+  padding: 50px 0 0 0;
 }
 
+.navmenu {
+  /* padding-top: 50px; */
+  width: 246px !important;
+  overflow: hidden;
+  background-color: #73247E;
+}
+
+.navbar {
+  display: block;
+  text-align: center;
+}
+.navbar-brand {
+  display: inline-block;
+  float: none;
+}
+.navbar-toggle {
+  position: absolute;
+  float: left;
+  margin-left: 15px;
+}
+
+.container {
+  max-width: 100%;
+}
+
+@media (min-width: 1px) {
+  .navbar-toggle {
+    display: block !important;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding: 0 0 0 300px;
+  }
+  .navmenu {
+    padding-top: 0;
+  }
+  .navbar {
+    display: none !important; /* IE8 fix */
+  }
+}
+
+.navmenu-brand {
+  padding: 17px 50px;
+  margin: 0px;
+  background-color: #4F1463;
+}
+
+.navmenu-default .navmenu-brand:hover{
+  background-color: #4F1463;
+}
+
+.navmenu-fixed-left {
+  z-index: 10300 !important;
+}
+
+.greeting-box {
+  background-color:white;
+  height:45px;
+  margin-bottom: 0px;
+  padding-left: 21px;padding-top:5px;
+}
+
+.hello-text {
+  color: #DF542A;font-size: 14px;
+}
+
+.greeting-corp-name {
+  color: #626272;font-size: 11px;font-weight: 600;line-height: 14px;
+}
+
+.navmenu-default .navmenu-nav>li>a {
+  color: #D58EDD;
+}
+
+.navmenu-default .navmenu-nav>.active>a {
+  background-color: #601C71;
+  color: white;
+}
