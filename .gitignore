@@ -1,4 +1,2 @@
 node_modules/
 *.log
-public/dist/js/app.min.js
-public/dist/css/style.min.css
