@@ -112,7 +112,7 @@ app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSeri
         };
         let req = {
             method: 'POST',
-            url: 'http://localhost:3000/oauth/token',
+            url: '/oauth/token',
             headers: {
                 'Content-type': 'application/x-www-form-urlencoded; charset=utf-8'
             },
