@@ -85,7 +85,19 @@ body {
   color: #D58EDD;
 }
 
-.navmenu-default .navmenu-nav>.active>a {
+.navmenu-default .navmenu-nav>.active>a, .navmenu-default .navmenu-nav>.active>a:hover {
   background-color: #601C71;
   color: white;
+  height: 67px;
+  padding-top: 24px;
+}
+
+.nav>li>a {
+  padding-left:30px;
+}
+
+.nav>li>a>img {
+  width:17px;
+  margin-right:20px;
+  margin-top: -2px;
 }
