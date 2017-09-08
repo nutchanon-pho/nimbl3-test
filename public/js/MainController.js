@@ -1,6 +1,6 @@
 var app = angular.module('nimbl3', ['ngCookies']);
 app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSerializer', function ($scope, $http, $cookies, $httpParamSerializer) {
-    console.log(angular.element('.active'));
+    Ps.initialize(document.querySelector('.navmenu'));
 
     $scope.currentActiveMenuIndex = 0;
 

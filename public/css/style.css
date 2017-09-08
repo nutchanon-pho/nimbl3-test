@@ -15,7 +15,6 @@ body {
   overflow: hidden;
   background-color: #73247E;
   position: absolute;
-  height: 3000px;
 }
 
 .navbar {
@@ -117,4 +116,21 @@ body {
   /* border-radius: 30%; */
   border-top-right-radius: 2em;
   border-radius: 0 17px 17px 0;
+}
+
+.sidenav-footer {
+  margin-top:180px;
+  text-align:center;
+  margin-bottom:22px;
+}
+
+.powered-by{
+  color: #D58EDD;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.powered-by-logo {
+  width:113px; 
+  height:36px;
 }
