@@ -25,7 +25,9 @@
 
       <li ng-repeat="menu in sideNavMenuList" ng-class="{active:menu.isActive}">
         <span class="color-bar" style="background-color:{{menu.colorBar}};"></span><a href="" ng-click="setMenuAsActive($index)">
-          <img ng-src="{{menu.isActive ? menu.image.active : menu.image.inactive}}"/>{{menu.label}}</a>
+          <img ng-show="menu.isActive" ng-src="{{menu.image.active}}"/>
+          <img ng-show="!menu.isActive" ng-src="{{menu.image.inactive}}"/>
+          {{menu.label}}</a>
       </li>
     </ul>
     <div class="sidenav-footer">
