@@ -14,7 +14,7 @@ body {
   width: 246px !important;
   overflow: hidden;
   background-color: #73247E;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .navbar {
@@ -133,4 +133,59 @@ body {
 .powered-by-logo {
   width:113px; 
   height:36px;
+}
+
+.order-header {
+  font-size: 24px;	
+  font-weight: lighter;	
+  line-height: 29px;
+}
+
+.order-text {
+  opacity: 0.2;	color: #6C5E73;
+}
+
+.order-number {
+  color: #6C5E73;
+}
+
+.company-info-row {
+  margin-top: 36px;
+}
+
+.company-info-box {
+  padding: 12px 15px;height: 80px;	border: 1px solid rgba(173,179,185,0.51);	border-radius: 3px;	background-color: #FFFFFF;
+}
+
+.company-info-name {
+  color: #626272;font-size: 16px;	font-weight: bold;	line-height: 21px;
+}
+
+.company-info-address {
+  font-weight: lighter;;color: #8899AA;font-size: 12px;	line-height: 16px;
+}
+
+.company-info-phone {
+  margin-top:5px;color: #8899AA;	font-size: 12px;	font-weight: 600;	line-height: 15px;
+}
+
+.company-info-type {
+  text-align:center;border-right: 1px solid rgba(173, 179, 185, 0.2);
+  font-size: 11px;
+}
+
+.company-info-select {
+  height: 33px;width: 100%;
+}
+
+.top-button-area {
+  padding-top: 21px;
+}
+
+.back-button {
+  padding: 14px 3px;color:#626272;font-weight:lighter;
+}
+
+.update-order-button {
+  font-weight:lighter;color:white;padding: 14px 15px;height: 44px;	border-radius: 5px;	background-color: #8899AA;
 }

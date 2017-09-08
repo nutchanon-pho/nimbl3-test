@@ -11,18 +11,17 @@
   <link rel="stylesheet" href="/fonts/stylesheet.css" />
 </head>
 
-<body ng-app="nimbl3" ng-controller="MainController" ng-cloak>
+<body ng-app="nimbl3" ng-controller="MainController" style="background-color:#F4F7F8;" ng-cloak>
   <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
     <!-- <a class="navmenu-brand visible-md visible-lg" href="#">Project name</a> -->
     <img class="navmenu-brand" src="/icons/logo-white.svg" />
     <ul class="nav navmenu-nav greeting-box">
       <li>
-          <div class="hello-text">Hello, Somchai</div>
-          <div class="greeting-corp-name">TWIN TYPES CORPORATION</div>
+        <div class="hello-text">Hello, Somchai</div>
+        <div class="greeting-corp-name">TWIN TYPES CORPORATION</div>
       </li>
     </ul>
     <ul class="nav navmenu-nav">
-
       <li ng-repeat="menu in sideNavMenuList" ng-class="{active:menu.isActive}">
         <span class="color-bar" style="background-color:{{menu.colorBar}};"></span><a href="" ng-click="setMenuAsActive($index)">
           <img ng-show="menu.isActive" ng-src="{{menu.image.active}}"/>
@@ -44,15 +43,54 @@
         </button>
   </div>
 
-  <!-- <div class="container">
-    <div class="page-header">
-      <h1>Navmenu Template</h1>
+  <div class="container" style="margin-top:102px;margin-left: -35px;">
+    <div class="row">
+      <div class="col-md-12 order-header">
+        <span class="order-text">Orders / </span><span class="order-number">TN SO 123022</span>
+      </div>
     </div>
-    <p class="lead">This example shows the navmenu element. If the viewport is <b>less than 992px</b> the menu will be placed the off canvas
-      and will be shown with a slide in effect.</p>
-    <p>Also take a look at the examples for a navmenu with <a href="../navmenu-push">push effect</a> and <a href="../navmenu-reveal">reveal effect</a>.</p>
-  </div> -->
-  <!-- /.container -->
+    <div class="row company-info-row">
+      <div class="col-md-9">
+        <div class="company-info-box">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="company-info-name">CPF SARABURI</div>
+              <div class="company-info-address">Highway 2, Kaeng Khoi Saraburi Thailand</div>
+              <div class="company-info-phone">+66 087 348 79 34</div>
+            </div>
+            <div class="col-md-2 company-info-type">
+              <div>Type</div>
+              <div>
+                <select class="company-info-select">
+                  <option value="Retailers">Retailers</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-2 company-info-type">
+              <div>Owned By</div>
+              <div>
+                <select class="company-info-select">
+                    <option value="Retailers">Forrest Gump</option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-md-2 company-info-type">
+              <div>Status</div>
+              <div>
+                <select class="company-info-select">
+                      <option value="Retailers">Pending</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 top-button-area">
+          <div class="col-md-3"><div class="back-button">Back</div></div>
+          <div class="col-md-9"><div class="update-order-button">Update Order</div></div>
+      </div>
+    </div>
+  </div>
 </body>
 <script src="/dist/js/dependencies/jquery-3.2.1.min.js"></script>
 <script src="/dist/js/dependencies/jasny-bootstrap.min.js"></script>
