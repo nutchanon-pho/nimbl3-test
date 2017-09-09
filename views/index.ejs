@@ -54,15 +54,15 @@
               <div class="company-info-address">{{order.account.address}}</div>
               <div class="company-info-phone hidden-xs">{{order.account.phone}}</div>
             </div>
-            <div class="col-md-2 company-info-type">
+            <div class="col-md-2 company-info-type hidden-xs">
               <div>Type</div>
               <div>
-                <select class="company-info-select">
+                <select class="company-info-select hidden-xs">
                   <option value="{{order.account.type}}">{{order.account.type}}</option>
                 </select>
               </div>
             </div>
-            <div class="col-md-2 company-info-type">
+            <div class="col-md-2 company-info-type hidden-xs">
               <div>Owned By</div>
               <div>
                 <select class="company-info-select">
@@ -70,7 +70,7 @@
                   </select>
               </div>
             </div>
-            <div class="col-md-2 company-info-type">
+            <div class="col-md-2 company-info-type hidden-xs">
               <div>Status</div>
               <div>
                 <select class="company-info-select">
@@ -81,7 +81,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3 top-button-area">
+      <div class="col-md-3 top-button-area hidden-xs">
         <div class="col-md-3">
           <div class="back-button">Back</div>
         </div>
@@ -90,6 +90,32 @@
         </div>
       </div>
     </div>
+    <div class="row visible-xs visible-sm" style="margin-top:25px;">
+      <div class="col-xs-12">
+        <div class="update-order-button">Update Order</div>
+      </div>
+    </div>
+    <div class="row visible-xs visible-sm" style="margin-top:25px;">
+      <div class="col-xs-12 company-info-type visible-xs visible-sm">
+        <div>Owned By</div>
+        <div>
+          <select class="company-info-select">
+            <option value="{{order.account.ownedBy}}">{{order.account.ownedBy}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row visible-xs visible-sm" style="margin-top:25px;">
+      <div class="col-xs-12 company-info-type visible-xs visible-sm">
+        <div>Status</div>
+        <div>
+          <select class="company-info-select">
+                  <option value="{{order.status}}">{{order.status}}</option>
+                </select>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="line visible-xs visible-sm"></div> -->
     <div class="row">
       <div class="col-md-12">
         <div class="add-product-box">
@@ -222,13 +248,13 @@
       </div>
       <div class="line"></div>
       <div class="row">
-          <div class="col-md-5" style="font-size: 14px;">
-            Total
-          </div>
-          <div class="col-md-7" style="font-size: 18px;text-align:right;font-weight:bold;">
-            THB 41,585.31
-          </div>
+        <div class="col-md-5" style="font-size: 14px;">
+          Total
         </div>
+        <div class="col-md-7" style="font-size: 18px;text-align:right;font-weight:bold;">
+          THB 41,585.31
+        </div>
+      </div>
     </div>
   </div>
 </body>
