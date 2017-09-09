@@ -103,31 +103,56 @@ app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSeri
     };
 
     $scope.login = () => {
-        let data = {
-            grant_type:'password', 
-            username: 'nimbl3test', 
-            password: 'helloworld', 
-            client_id: 'mobile_android',
-            client_secret: 'secret'
-        };
-        let req = {
-            method: 'POST',
-            url: '/oauth/token',
-            headers: {
-                'Content-type': 'application/x-www-form-urlencoded; charset=utf-8'
-            },
-            data: $httpParamSerializer(data)
-        };
-        $http(req).then(function(data){
-            console.log(data.data.access_token);
-            $http.defaults.headers.common.Authorization = 
-              'Bearer ' + data.data.access_token;
-            $cookies.put('access_token', data.data.access_token);
-            // $http.get('/secret').then((result) => {
-            //     console.log(result);
-            // });
-        });   
+        return new Promise((resolve, reject) => {
+            let data = {
+                grant_type:'password', 
+                username: 'nimbl3test', 
+                password: 'helloworld', 
+                client_id: 'mobile_android',
+                client_secret: 'secret'
+            };
+            let req = {
+                method: 'POST',
+                url: '/oauth/token',
+                headers: {
+                    'Content-type': 'application/x-www-form-urlencoded; charset=utf-8'
+                },
+                data: $httpParamSerializer(data)
+            };
+            $http(req).then(function(data){
+                console.log(data.data.access_token);
+                $http.defaults.headers.common.Authorization = 
+                  'Bearer ' + data.data.access_token;
+                $cookies.put('access_token', data.data.access_token);
+                resolve();
+            }).catch(reject);
+        });
     };
 
-    $scope.login();
+    $scope.getOrder = (orderId) => {
+        $http.get(`/orders/${orderId}`).then((result) => {
+            console.log('getOrder result',result);
+            $scope.order = result.data;
+        })
+        .catch((err) => {
+            alert('There is an error while retrieving order from the server.');
+            console.error(err);
+        });
+    };
+
+    $scope.getProducts = () => {
+        $http.get('/products').then((result) => {
+            console.log('getProducts result', result);
+            $scope.productList = result.data;
+        })
+        .catch((err) => {
+            alert('There is an error while retrieving products from the server.');
+            console.error(err);
+        });
+    };
+
+    $scope.login().then(() => {
+        $scope.getOrder(1);
+        $scope.getProducts();
+    });
 }]);
