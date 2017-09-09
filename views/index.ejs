@@ -35,28 +35,24 @@
     </div>
   </div>
 
-  <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
-    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+  <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg" style="	height: 50px;z-index: 0;background-color:#702283;">
+    <img class="mobile-nav-toggle" data-toggle="offcanvas" data-target=".navmenu" src="/icons/arrow-gold.svg" />
   </div>
 
   <div class="container">
-    <div class="row">
+    <div class="row hidden-xs">
       <div class="col-md-12 order-header">
         <span class="order-text">Orders / </span><span class="order-number">{{order.orderNumber}}</span>
       </div>
     </div>
     <div class="row company-info-row">
-      <div class="col-md-9">
+      <div class="col-md-9 company-info-box-col">
         <div class="company-info-box">
           <div class="row">
             <div class="col-md-6">
               <div class="company-info-name">{{order.account.name}}</div>
               <div class="company-info-address">{{order.account.address}}</div>
-              <div class="company-info-phone">{{order.account.phone}}</div>
+              <div class="company-info-phone hidden-xs">{{order.account.phone}}</div>
             </div>
             <div class="col-md-2 company-info-type">
               <div>Type</div>

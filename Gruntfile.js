@@ -59,7 +59,7 @@ module.exports = function (grunt) {
 
         browserSync: {
             bsFiles: {
-                src : 'public/*/**.*'
+                src : ['public/*/**.*', 'views/*.ejs']
             },
             options: {
                 proxy: "localhost:3000",port: 7000
