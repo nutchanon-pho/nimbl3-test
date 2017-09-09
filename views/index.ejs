@@ -100,10 +100,12 @@
           <div class="row">
             <div class="col-md-1" style="padding-top: 14px;width: 5%;padding-left: 28px;">
               <img ng-show="addProductTextbox.length == 0" src="/icons/icon_plus.svg" class="add-product-button" />
-              <img ng-show="addProductTextbox.length > 0" ng-click="addProductTextbox = ''" src="/icons/icon_plus.svg" class="add-product-button rotate-45-deg pointer" />
+              <img ng-show="addProductTextbox.length > 0" ng-click="addProductTextbox = ''" src="/icons/icon_plus.svg" class="add-product-button rotate-45-deg pointer"
+              />
             </div>
             <div class="col-md-11">
-              <input ng-model="addProductTextbox" ng-focus="showProductTextBoxOverlay()" ng-blur="hideProductTextBoxOverlay()" placeholder="Add Products" type="text" class="add-product-textbox" />
+              <input ng-model="addProductTextbox" ng-focus="showProductTextBoxOverlay()" ng-blur="hideProductTextBoxOverlay()" placeholder="Add Products"
+                type="text" class="add-product-textbox" />
             </div>
           </div>
         </div>
@@ -148,19 +150,19 @@
               </td>
               <td>{{orderItem.discount | percentage}}</td>
               <td>
-                  <span ng-show="orderItem.product.listPrice">
+                <span ng-show="orderItem.product.listPrice">
                       THB {{netPrice = orderItem.product.listPrice * (1 - orderItem.discount) | number}}
                   </span>
-                  <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
+                <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
                       Set Price
                   </span>
               </td>
-              <td>{{orderItem.quantity | number}}<img style="width:17px;height:17px;" src="/icons/icon_edit.svg"/></td>
+              <td>{{orderItem.quantity | number}}<img style="width:17px;height:17px;" src="/icons/icon_edit.svg" /></td>
               <td>
-                  <span ng-show="orderItem.product.listPrice">
+                <span ng-show="orderItem.product.listPrice">
                       THB {{orderItem.quantity * netPrice | number}}
                   </span>
-                  <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
+                <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
                       Set Price
                   </span>
               </td>
@@ -170,10 +172,66 @@
         </div>
       </div>
     </div>
-    <div class="row" style="margin-top:14px;margin-bottom:20px;">
-        <div class="col-md-12">
-          <div style="font-size:12px;">Remark</div>
-          <div class="remark-box">When you enter into any new area of science, you almost always find yourself with a baffling new language of technical terms to learn before you can converse with the experts. This is certainly true in astronomy both in terms of terms that refer to the cosmos and terms that describe the tools of the trade, the most prevalent being the telescope. So to get us off of first base, let’s define some of the key terms that pertain to telescopes to help you be able to talk to them more intelligently. </div>
+    <div class="row" style="margin-top:14px;margin-bottom:300px;">
+      <div class="col-md-12">
+        <div style="font-size:12px;">Remark</div>
+        <div class="remark-box">When you enter into any new area of science, you almost always find yourself with a baffling new language of technical
+          terms to learn before you can converse with the experts. This is certainly true in astronomy both in terms of terms
+          that refer to the cosmos and terms that describe the tools of the trade, the most prevalent being the telescope.
+          So to get us off of first base, let’s define some of the key terms that pertain to telescopes to help you be able
+          to talk to them more intelligently. </div>
+      </div>
+    </div>
+    <div class="summary-box">
+      <div class="row">
+        <div class="col-md-7" style="">
+          Estimated Delivery Date
+        </div>
+        <div class="col-md-5">
+          <input value="14-10-2016" class="summary-box-input" type="text" />
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="row summary-box-line-height">
+        <div class="col-md-7">
+          Sub-total
+        </div>
+        <div class="col-md-5" style="text-align:right;color:#8899AA;">
+          40.033
+        </div>
+      </div>
+      <div class="row summary-box-line-height">
+        <div class="col-md-7" style="">
+          Shipping
+        </div>
+        <div class="col-md-5">
+          <input value="0" class="summary-box-input" type="text" />
+        </div>
+      </div>
+      <div class="row summary-box-line-height">
+        <div class="col-md-7" style="">
+          Special Discount
+        </div>
+        <div class="col-md-5">
+          <input value="9999.99" class="summary-box-input" type="text" />
+        </div>
+      </div>
+      <div class="row summary-box-line-height">
+        <div class="col-md-7" style="">
+          Tax
+        </div>
+        <div class="col-md-5">
+          <input style="width: 35%;" value="7" class="summary-box-input" type="text" /><span style="color:#8899AA;">%  1,826.00</span>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="row">
+          <div class="col-md-5" style="font-size: 14px;">
+            Total
+          </div>
+          <div class="col-md-7" style="font-size: 18px;text-align:right;font-weight:bold;">
+            THB 41,585.31
+          </div>
         </div>
     </div>
   </div>
