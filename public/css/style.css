@@ -67,7 +67,7 @@ body {
 }
 
 .navmenu-fixed-left {
-  z-index: 10300 !important;
+  z-index: 1 !important;
 }
 
 .greeting-box {
@@ -115,7 +115,7 @@ body {
   display: inline-block;
   top: 13px;
   position: absolute;
-  z-index: 1000;
+  z-index: 1;
   /* border-radius: 30%; */
   border-top-right-radius: 2em;
   border-radius: 0 17px 17px 0;
@@ -186,15 +186,33 @@ body {
 }
 
 .back-button {
-  padding: 14px 3px;color:#626272;font-weight:lighter;
+  padding: 0px 3px;
+  color:#626272;
+  font-weight:lighter;
+  display: table-cell;
+  vertical-align: middle;
+  height: 44px;
 }
 
 .update-order-button {
-  font-weight:lighter;color:white;padding: 14px 15px;height: 44px;	border-radius: 5px;	background-color: #8899AA;
+  font-weight: lighter;
+  color: #fff;
+  padding: 0px 15px;
+  height: 44px;
+  border-radius: 5px;
+  background-color: #89a;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .add-product-box {
-  height: 50px;margin-top:17px;	border: 1px solid #C3C8CD;	border-radius: 3px;	background-color: #FFFFFF;
+  height: 50px;
+  margin-top:17px;	
+  border: 1px solid #C3C8CD;	
+  border-radius: 3px;	
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 11;
 }
 
 .add-product-textbox {
@@ -230,7 +248,6 @@ body {
 
 .product-table-body {
   height:64px;
-  text-align: center;
   font-size: 11px;
   color: #8899AA;
   font-weight: lighter;
@@ -238,4 +255,86 @@ body {
 
 .product-table-body > td {
   vertical-align: middle !important;
+}
+
+.product-table-set-price {
+  color: red;
+  text-decoration: underline;
+}
+
+.remark-box {
+  margin-top:2.82px;
+  font-weight: lighter;
+  color: #8899AA;
+  font-size: 11px;
+  line-height: 17px;
+  height: 82.96px;
+  border: 1px solid #D8D8D8;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+
+.add-product-textbox-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;	
+  background-color: #333333;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.rotate-45-deg {
+  transform: rotate(45deg);
+}
+
+.add-product-button {
+  height: 20.35px;	width: 20.35px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.summary-box {
+  height: 251px;
+  width: 293px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 14px 0 rgba(0,0,0,.12);
+  position: fixed;
+  bottom: 20px;
+  right: 4%;
+  z-index: 30;
+  padding: 18px 16px;
+  font-size: 11px;
+  line-height:18px;
+}
+
+.summary-box-input {
+  text-align: center;
+  font-weight: lighter;
+  color: #C9C9C9; 
+  font-size: 11px; 
+  line-height: 15px;
+  width:100%;
+  height:28px;
+  border: 1px solid #8899AA;	
+  border-radius: 4px;
+}
+
+.line {
+  box-sizing: border-box;
+  border-top: 1px solid #f1f0f4;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.summary-box-line-height {
+  line-height: 34px;
 }
