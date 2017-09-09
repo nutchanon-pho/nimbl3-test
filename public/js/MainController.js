@@ -158,6 +158,14 @@ app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSeri
             });
     };
 
+    $scope.showProductTextBoxOverlay = () => {
+        angular.element('.add-product-textbox-overlay').show();
+    };
+
+    $scope.hideProductTextBoxOverlay = () => {
+        angular.element('.add-product-textbox-overlay').hide();
+    };
+
     $scope.login().then(() => {
         $scope.getOrder(1);
         $scope.getProducts();

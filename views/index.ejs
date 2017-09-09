@@ -102,12 +102,13 @@
               <img src="/icons/icon_plus.svg" style="height: 20.35px;	width: 20.35px;" />
             </div>
             <div class="col-md-11">
-              <input placeholder="Add Products" type="text" class="add-product-textbox" />
+              <input ng-focus="showProductTextBoxOverlay()" ng-blur="hideProductTextBoxOverlay()" placeholder="Add Products" type="text" class="add-product-textbox" />
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="add-product-textbox-overlay" style="display:none;"></div>
     <div class="row product-table-row">
       <div class="col-md-12">
         <div class="product-table-wrapper">

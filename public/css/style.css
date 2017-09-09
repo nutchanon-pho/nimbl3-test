@@ -67,7 +67,7 @@ body {
 }
 
 .navmenu-fixed-left {
-  z-index: 10300 !important;
+  z-index: 1 !important;
 }
 
 .greeting-box {
@@ -115,7 +115,7 @@ body {
   display: inline-block;
   top: 13px;
   position: absolute;
-  z-index: 1000;
+  z-index: 1;
   /* border-radius: 30%; */
   border-top-right-radius: 2em;
   border-radius: 0 17px 17px 0;
@@ -206,7 +206,13 @@ body {
 }
 
 .add-product-box {
-  height: 50px;margin-top:17px;	border: 1px solid #C3C8CD;	border-radius: 3px;	background-color: #FFFFFF;
+  height: 50px;
+  margin-top:17px;	
+  border: 1px solid #C3C8CD;	
+  border-radius: 3px;	
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 11;
 }
 
 .add-product-textbox {
@@ -270,4 +276,15 @@ body {
   vertical-align: middle;
   padding-left: 19px;
   padding-right: 19px;
+}
+
+.add-product-textbox-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;	
+  background-color: #333333;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
