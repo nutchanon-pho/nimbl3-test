@@ -14,7 +14,6 @@
 
 <body ng-app="nimbl3" ng-controller="MainController" style="background-color:#F4F7F8;" ng-cloak>
   <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-    <!-- <a class="navmenu-brand visible-lg visible-lg" href="#">Project name</a> -->
     <img class="navmenu-brand" src="/icons/logo-white.svg" />
     <ul class="nav navmenu-nav greeting-box">
       <li>
@@ -36,8 +35,10 @@
     </div>
   </div>
 
-  <div class="navbar navbar-default navbar-fixed-top hidden-lg hidden-lg" style="	height: 50px;z-index: 12;background-color:#702283;">
+  <div class="navbar navbar-default navbar-fixed-top hidden-lg hidden-lg" style="width:100vw;	height: 50px;z-index: 12;background-color:#702283;">
     <img class="mobile-nav-toggle" data-toggle="offcanvas" data-target=".navmenu" src="/icons/arrow-gold.svg" />
+    <div style="color:white;font-weight:lighter;font-size:15px;height: 50px;vertical-align: middle;display: table-cell;width: 100vw;"><div>Edit {{order.orderNumber}}</div></div>
+    <img style="width: 17px;height: 17px;position: fixed;top: 15px;right: 15px;" src="/icons/magnifying-glass.svg" />
   </div>
 
   <div class="container">
@@ -55,15 +56,15 @@
               <div class="company-info-address">{{order.account.address}}</div>
               <div class="company-info-phone hidden-xs hidden-sm hidden-md">{{order.account.phone}}</div>
             </div>
-            <div class="col-lg-2 col-md-2 company-info-type hidden-xs">
+            <div class="col-lg-2 col-md-2 company-info-type hidden-xs hidden-sm hidden-md">
               <div>Type</div>
               <div>
-                <select class="company-info-select hidden-xs">
+                <select class="company-info-select">
                     <option value="{{order.account.type}}">{{order.account.type}}</option>
                   </select>
               </div>
             </div>
-            <div class="col-lg-2 col-md-2 company-info-type hidden-xs">
+            <div class="col-lg-2 col-md-2 company-info-type hidden-xs hidden-sm hidden-md">
               <div>Owned By</div>
               <div>
                 <select class="company-info-select">
@@ -71,7 +72,7 @@
                   </select>
               </div>
             </div>
-            <div class="col-lg-2 cold-md-2 company-info-type hidden-xs">
+            <div class="col-lg-2 cold-md-2 company-info-type hidden-xs hidden-sm hidden-md">
               <div>Status</div>
               <div>
                 <select class="company-info-select">
@@ -82,7 +83,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 top-button-area hidden-xs">
+      <div class="col-lg-3 top-button-area hidden-xs hidden-sm hidden-md">
         <div class="col-lg-3">
           <div class="back-button">Back</div>
         </div>
@@ -119,16 +120,16 @@
     <div class="line visible-xs visible-sm" style="margin: 28px -15px 20px -15px;border: 1px solid #979797;	opacity: 0.2;"></div>
     <div class="row">
       <div class="summary-box">
-        <div class="row">
-          <div class="col-xs-7" style="">
-            Estimated Delivery Date
-          </div>
-          <div class="col-xs-5">
-            <input value="14-10-2016" class="summary-box-input" type="text" />
-          </div>
+        <div class="col-xs-7" style="">
+          Estimated Delivery Date
         </div>
-        <div class="line"></div>
-        <div class="row summary-box-line-height">
+        <div class="col-xs-5">
+          <input value="14-10-2016" class="summary-box-input" type="text" />
+        </div>
+        <div class="col-xs-12">
+          <div class="line"></div>
+        </div>
+        <div class="summary-box-line-height">
           <div class="col-xs-7">
             Sub-total
           </div>
@@ -136,7 +137,7 @@
             40.033
           </div>
         </div>
-        <div class="row summary-box-line-height">
+        <div class="summary-box-line-height">
           <div class="col-xs-7" style="">
             Shipping
           </div>
@@ -144,7 +145,7 @@
             <input value="0" class="summary-box-input" type="text" />
           </div>
         </div>
-        <div class="row summary-box-line-height">
+        <div class="summary-box-line-height">
           <div class="col-xs-7" style="">
             Special Discount
           </div>
@@ -152,56 +153,55 @@
             <input value="9999.99" class="summary-box-input" type="text" />
           </div>
         </div>
-        <div class="row summary-box-line-height">
+        <div class="summary-box-line-height">
           <div class="col-xs-7" style="">
             Tax
           </div>
           <div class="col-xs-5">
-            <input style="width: 35%;" value="7" class="summary-box-input" type="text" /><span style="color:#8899AA;">%  1,826.00</span>
+            <input style="width: 30%;" value="7" class="summary-box-input" type="text" /><span style="color:#8899AA;">% 1,826.00</span>
           </div>
         </div>
-        <div class="line"></div>
-        <div class="row">
-          <div class="col-xs-5" style="font-size: 14px;">
-            Total
-          </div>
-          <div class="col-xs-7" style="font-size: 18px;text-align:right;font-weight:bold;">
-            THB 41,585.31
-          </div>
+        <div class="col-xs-12">
+          <div class="line"></div>
+        </div>
+        <div class="col-xs-5" style="font-size: 14px;">
+          Total
+        </div>
+        <div class="col-xs-7" style="font-size: 18px;text-align:right;font-weight:bold;">
+          THB 41,585.31
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-12 mobile-nopadding">
+      <!-- <div class="col-lg-12 mobile-nopadding"> -->
         <div class="add-product-box">
-          <div class="row">
-            <div class="col-lg-1 col-xs-1" style="padding-top: 14px;width: 5%;padding-left: 28px;">
-              <img ng-show="addProductTextbox.length == 0" src="/icons/icon_plus.svg" class="add-product-button" />
-              <img ng-show="addProductTextbox.length > 0" ng-click="addProductTextbox = ''" src="/icons/icon_plus.svg" class="add-product-button rotate-45-deg pointer"
-              />
-            </div>
-            <div class="col-lg-11 col-xs-10">
-              <input ng-model="addProductTextbox" ng-focus="showProductTextBoxOverlay()" ng-blur="hideProductTextBoxOverlay()" placeholder="Add Products"
-                type="text" class="add-product-textbox" />
-            </div>
+          <div class="col-lg-1 col-xs-1" style="padding-top: 14px;width: 5%;">
+            <img ng-show="addProductTextbox.length == 0" src="/icons/icon_plus.svg" class="add-product-button" />
+            <img ng-show="addProductTextbox.length > 0" ng-click="addProductTextbox = ''" src="/icons/icon_plus.svg" class="add-product-button rotate-45-deg pointer"
+            />
+          </div>
+          <div class="col-lg-11 col-xs-10">
+            <input ng-model="addProductTextbox" ng-focus="showProductTextBoxOverlay()" ng-blur="hideProductTextBoxOverlay()" placeholder="Add Products"
+              type="text" class="add-product-textbox" />
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
     <div class="add-product-textbox-overlay" style="display:none;"></div>
-    <div class="row product-table-row hidden-xs hidden-sm hidden-md">
+    <div class="row visible-xs" style="margin-top:14px;">
+      <div class="col-lg-12 remark-box">
+        <div style="color: #626272;	font-size: 14px;	line-height: 18px;">Remark</div>
+        <div>When you enter into any new area of science, you almost always find yourself with a baffling new language of technical
+          terms to learn before you can converse with the experts. This is certainly true in astronomy both in terms of terms
+          that refer to the cosmos and terms that describe the tools of the trade, the most prevalent being the telescope.
+          So to get us off of first base, let’s define some of the key terms that pertain to telescopes to help you be able
+          to talk to them more intelligently. </div>
+      </div>
+    </div>
+    <div class="row product-table-row ">
       <div class="col-lg-12">
-        <div class="product-table-wrapper">
+        <div class="product-table-wrapper table-responsive">
           <table class="table product-table">
-            <!-- <thead>
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead> -->
-            <!-- <tbody> -->
             <tr class="product-table-header">
               <td>SKU</td>
               <td style="width:25%;">DESCRIPTION</td>
@@ -249,7 +249,7 @@
         </div>
       </div>
     </div>
-    <div class="row" style="margin-top:14px;margin-bottom:300px;">
+    <div class="row visible-lg visible-md" style="margin-top:14px;margin-bottom:300px;">
       <div class="col-lg-12">
         <div style="font-size:12px;">Remark</div>
         <div class="remark-box">When you enter into any new area of science, you almost always find yourself with a baffling new language of technical
@@ -259,6 +259,10 @@
           to talk to them more intelligently. </div>
       </div>
     </div>
+  </div>
+  <div class="visible-xs" style="text-align:center;height: 66px;		background-color: #702283; padding-top:10px;">
+    <div class="powered-by">POWERED BY</div>
+    <img class="powered-by-logo" src="/icons/logo-white.svg" />
   </div>
 </body>
 <script src="/dist/js/dependencies/jquery-3.2.1.min.js"></script>
