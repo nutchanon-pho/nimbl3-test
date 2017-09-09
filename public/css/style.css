@@ -51,6 +51,9 @@ body {
   .navbar {
     display: none !important; /* IE8 fix */
   }
+  .container {
+    margin-top:102px;margin-left: -35px;
+  }
 }
 
 .navmenu-brand {
