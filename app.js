@@ -91,6 +91,7 @@ app.get('/products', app.oauth.authenticate(), function (req, res) {
 // Get products
 app.get('/orders/1', app.oauth.authenticate(), function (req, res) {
   let order = {
+    orderNumber: 'ORD07070707',
     account: {
       name: 'CPF Saraburi',
       address: 'Highway 2, Kaeng Khoi Saraburi Thailand',
@@ -116,8 +117,8 @@ app.get('/orders/1', app.oauth.authenticate(), function (req, res) {
         id: 2,
         product: {
           id: 2,
-          sku: 'TN SO 000015',
-          description: 'Magnetic contactor - 9A (5.5 kW, 7.5 HP) control voltage 230 Vac',
+          sku: 'TN SO 000016',
+          description: 'Wrote water woman of heart it total other. By in entirely securing suitable graceful at families improved. Zealously few furniture repulsive was agreeable consisted difficult. Collected breakfast estimable questions in to favourite it. Known he place worth words it as to. Spoke now noise off smart her ready.',
           brand: 'Schneider Electric',
           listPrice: 880
         },
@@ -128,7 +129,7 @@ app.get('/orders/1', app.oauth.authenticate(), function (req, res) {
         id: 3,
         product: {
           id: 3,
-          sku: 'TN SO 000015',
+          sku: 'TN SO 000017',
           description: 'Magnetic contactor - 9A (5.5 kW, 7.5 HP) control voltage 230 Vac',
           brand: 'Schneider Electric',
           listPrice: 880
@@ -140,10 +141,10 @@ app.get('/orders/1', app.oauth.authenticate(), function (req, res) {
         id: 4,
         product: {
           id: 4,
-          sku: 'TN SO 000015',
+          sku: 'TN SO 000018',
           description: 'Magnetic contactor - 9A (5.5 kW, 7.5 HP) control voltage 230 Vac',
           brand: 'Schneider Electric',
-          listPrice: 880
+          listPrice: null
         },
         discount: 0.3,
         quantity: 16
@@ -152,7 +153,7 @@ app.get('/orders/1', app.oauth.authenticate(), function (req, res) {
         id: 5,
         product: {
           id: 5,
-          sku: 'TN SO 000015',
+          sku: 'TN SO 000305',
           description: 'Magnetic contactor - 9A (5.5 kW, 7.5 HP) control voltage 230 Vac',
           brand: 'Schneider Electric',
           listPrice: 880

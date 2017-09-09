@@ -186,11 +186,23 @@ body {
 }
 
 .back-button {
-  padding: 14px 3px;color:#626272;font-weight:lighter;
+  padding: 0px 3px;
+  color:#626272;
+  font-weight:lighter;
+  display: table-cell;
+  vertical-align: middle;
+  height: 44px;
 }
 
 .update-order-button {
-  font-weight:lighter;color:white;padding: 14px 15px;height: 44px;	border-radius: 5px;	background-color: #8899AA;
+  font-weight: lighter;
+  color: #fff;
+  padding: 0px 15px;
+  height: 44px;
+  border-radius: 5px;
+  background-color: #89a;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .add-product-box {
@@ -230,7 +242,6 @@ body {
 
 .product-table-body {
   height:64px;
-  text-align: center;
   font-size: 11px;
   color: #8899AA;
   font-weight: lighter;
@@ -238,4 +249,9 @@ body {
 
 .product-table-body > td {
   vertical-align: middle !important;
+}
+
+.product-table-set-price {
+  color: red;
+  text-decoration: underline;
 }

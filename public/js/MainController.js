@@ -1,4 +1,11 @@
 var app = angular.module('nimbl3', ['ngCookies']);
+
+app.filter('percentage', ['$filter', function ($filter) {
+    return function (input, decimals) {
+        return $filter('number')(input * 100, decimals) + '%';
+    };
+}]);
+
 app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSerializer', function ($scope, $http, $cookies, $httpParamSerializer) {
     Ps.initialize(document.querySelector('.navmenu'));
 
@@ -22,7 +29,7 @@ app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSeri
             },
             isActive: false,
             colorBar: '#65B32E'
-        },{
+        }, {
             label: 'Companies',
             image: {
                 active: '/icons/factory-white.svg',
@@ -105,9 +112,9 @@ app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSeri
     $scope.login = () => {
         return new Promise((resolve, reject) => {
             let data = {
-                grant_type:'password', 
-                username: 'nimbl3test', 
-                password: 'helloworld', 
+                grant_type: 'password',
+                username: 'nimbl3test',
+                password: 'helloworld',
                 client_id: 'mobile_android',
                 client_secret: 'secret'
             };
@@ -119,10 +126,10 @@ app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSeri
                 },
                 data: $httpParamSerializer(data)
             };
-            $http(req).then(function(data){
+            $http(req).then(function (data) {
                 console.log(data.data.access_token);
-                $http.defaults.headers.common.Authorization = 
-                  'Bearer ' + data.data.access_token;
+                $http.defaults.headers.common.Authorization =
+                    'Bearer ' + data.data.access_token;
                 $cookies.put('access_token', data.data.access_token);
                 resolve();
             }).catch(reject);
@@ -131,13 +138,13 @@ app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSeri
 
     $scope.getOrder = (orderId) => {
         $http.get(`/orders/${orderId}`).then((result) => {
-            console.log('getOrder result',result);
+            console.log('getOrder result', result);
             $scope.order = result.data;
         })
-        .catch((err) => {
-            alert('There is an error while retrieving order from the server.');
-            console.error(err);
-        });
+            .catch((err) => {
+                alert('There is an error while retrieving order from the server.');
+                console.error(err);
+            });
     };
 
     $scope.getProducts = () => {
@@ -145,10 +152,10 @@ app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSeri
             console.log('getProducts result', result);
             $scope.productList = result.data;
         })
-        .catch((err) => {
-            alert('There is an error while retrieving products from the server.');
-            console.error(err);
-        });
+            .catch((err) => {
+                alert('There is an error while retrieving products from the server.');
+                console.error(err);
+            });
     };
 
     $scope.login().then(() => {

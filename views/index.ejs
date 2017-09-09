@@ -46,7 +46,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 order-header">
-        <span class="order-text">Orders / </span><span class="order-number">TN SO 123022</span>
+        <span class="order-text">Orders / </span><span class="order-number">{{order.orderNumber}}</span>
       </div>
     </div>
     <div class="row company-info-row">
@@ -54,15 +54,15 @@
         <div class="company-info-box">
           <div class="row">
             <div class="col-md-6">
-              <div class="company-info-name">CPF SARABURI</div>
-              <div class="company-info-address">Highway 2, Kaeng Khoi Saraburi Thailand</div>
-              <div class="company-info-phone">+66 087 348 79 34</div>
+              <div class="company-info-name">{{order.account.name}}</div>
+              <div class="company-info-address">{{order.account.address}}</div>
+              <div class="company-info-phone">{{order.account.phone}}</div>
             </div>
             <div class="col-md-2 company-info-type">
               <div>Type</div>
               <div>
                 <select class="company-info-select">
-                  <option value="Retailers">Retailers</option>
+                  <option value="{{order.account.type}}">{{order.account.type}}</option>
                 </select>
               </div>
             </div>
@@ -70,7 +70,7 @@
               <div>Owned By</div>
               <div>
                 <select class="company-info-select">
-                    <option value="Retailers">Forrest Gump</option>
+                    <option value="{{order.account.ownedBy}}">{{order.account.ownedBy}}</option>
                   </select>
               </div>
             </div>
@@ -78,7 +78,7 @@
               <div>Status</div>
               <div>
                 <select class="company-info-select">
-                      <option value="Retailers">Pending</option>
+                      <option value="{{order.status}}">{{order.status}}</option>
                     </select>
               </div>
             </div>
@@ -121,29 +121,49 @@
               </tr>
             </thead> -->
             <!-- <tbody> -->
-              <tr class="product-table-header">
-                <td>SKU</td>
-                <td style="width:25%;">DESCRIPTION</td>
-                <td style="width:15%;">BRAND</td>
-                <td style="width:7%;">LIST PRICE</td>
-                <td style="width:7%;">DISCOUNT</td>
-                <td style="width:7%;">NET PRICE</td>
-                <td style="width:7%;">QTY</td>
-                <td>TOTAL</td>
-                <td></td>
-              </tr>
-              <tr class="product-table-body">
-                  <td style="	color: #64707C;font-weight:normal;">TN SO 000015</td>
-                  <td>Magnetic contactor - 9A (5.5 kW\, 
-                      7.5 HP)\, control voltage 230 Vac</td>
-                  <td>Schneider Electric</td>
-                  <td>THB 880</td>
-                  <td>30%</td>
-                  <td>THB 660</td>
-                  <td>THB 660</td>
-                  <td>THB 660</td>
-                  <td style="text-decoration: underline;">Remove Item</td>
-                </tr>
+            <tr class="product-table-header">
+              <td>SKU</td>
+              <td style="width:25%;">DESCRIPTION</td>
+              <td style="width:15%;">BRAND</td>
+              <td style="width:7%;">LIST PRICE</td>
+              <td style="width:7%;">DISCOUNT</td>
+              <td style="width:7%;">NET PRICE</td>
+              <td style="width:7%;">QTY</td>
+              <td>TOTAL</td>
+              <td></td>
+            </tr>
+            <tr class="product-table-body" ng-repeat="orderItem in order.orderItems">
+              <td style="	color: #64707C;font-weight:normal;">{{orderItem.product.sku}}</td>
+              <td>{{orderItem.product.description}}</td>
+              <td>{{orderItem.product.brand}}</td>
+              <td>
+                <span ng-show="orderItem.product.listPrice">
+                    THB {{orderItem.product.listPrice | number}}
+                </span>
+                <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
+                    Set Price
+                </span>
+              </td>
+              <td>{{orderItem.discount | percentage}}</td>
+              <td>
+                  <span ng-show="orderItem.product.listPrice">
+                      THB {{netPrice = orderItem.product.listPrice * (1 - orderItem.discount) | number}}
+                  </span>
+                  <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
+                      Set Price
+                  </span>
+              </td>
+              <td>{{orderItem.quantity | number}}<img style="width:17px;height:17px;" src="/icons/icon_edit.svg"/></td>
+              <td>
+                  <span ng-show="orderItem.product.listPrice">
+                      THB {{orderItem.quantity * netPrice | number}}
+                  </span>
+                  <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
+                      Set Price
+                  </span>
+              </td>
+              <td style="text-decoration: underline;">Remove Item</td>
+            </tr>
           </table>
         </div>
       </div>
