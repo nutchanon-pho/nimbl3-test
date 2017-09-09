@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg" style="	height: 50px;z-index: 0;background-color:#702283;">
+  <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg" style="	height: 50px;z-index: 12;background-color:#702283;">
     <img class="mobile-nav-toggle" data-toggle="offcanvas" data-target=".navmenu" src="/icons/arrow-gold.svg" />
   </div>
 
@@ -58,8 +58,8 @@
               <div>Type</div>
               <div>
                 <select class="company-info-select hidden-xs">
-                  <option value="{{order.account.type}}">{{order.account.type}}</option>
-                </select>
+                    <option value="{{order.account.type}}">{{order.account.type}}</option>
+                  </select>
               </div>
             </div>
             <div class="col-md-2 company-info-type hidden-xs">
@@ -74,8 +74,8 @@
               <div>Status</div>
               <div>
                 <select class="company-info-select">
-                      <option value="{{order.status}}">{{order.status}}</option>
-                    </select>
+                    <option value="{{order.status}}">{{order.status}}</option>
+                  </select>
               </div>
             </div>
           </div>
@@ -100,8 +100,8 @@
         <div>Owned By</div>
         <div>
           <select class="company-info-select">
-            <option value="{{order.account.ownedBy}}">{{order.account.ownedBy}}</option>
-          </select>
+              <option value="{{order.account.ownedBy}}">{{order.account.ownedBy}}</option>
+            </select>
         </div>
       </div>
     </div>
@@ -110,12 +110,66 @@
         <div>Status</div>
         <div>
           <select class="company-info-select">
-                  <option value="{{order.status}}">{{order.status}}</option>
-                </select>
+              <option value="{{order.status}}">{{order.status}}</option>
+            </select>
         </div>
       </div>
     </div>
-    <!-- <div class="line visible-xs visible-sm"></div> -->
+    <div class="line visible-xs visible-sm" style="margin: 28px -15px 20px -15px;border: 1px solid #979797;	opacity: 0.2;"></div>
+    <div class="row">
+      <div class="summary-box">
+        <div class="row">
+          <div class="col-xs-7" style="">
+            Estimated Delivery Date
+          </div>
+          <div class="col-xs-5">
+            <input value="14-10-2016" class="summary-box-input" type="text" />
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="row summary-box-line-height">
+          <div class="col-xs-7">
+            Sub-total
+          </div>
+          <div class="col-xs-5" style="text-align:right;color:#8899AA;">
+            40.033
+          </div>
+        </div>
+        <div class="row summary-box-line-height">
+          <div class="col-xs-7" style="">
+            Shipping
+          </div>
+          <div class="col-xs-5">
+            <input value="0" class="summary-box-input" type="text" />
+          </div>
+        </div>
+        <div class="row summary-box-line-height">
+          <div class="col-xs-7" style="">
+            Special Discount
+          </div>
+          <div class="col-xs-5">
+            <input value="9999.99" class="summary-box-input" type="text" />
+          </div>
+        </div>
+        <div class="row summary-box-line-height">
+          <div class="col-xs-7" style="">
+            Tax
+          </div>
+          <div class="col-xs-5">
+            <input style="width: 35%;" value="7" class="summary-box-input" type="text" /><span style="color:#8899AA;">%  1,826.00</span>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="row">
+          <div class="col-xs-5" style="font-size: 14px;">
+            Total
+          </div>
+          <div class="col-xs-7" style="font-size: 18px;text-align:right;font-weight:bold;">
+            THB 41,585.31
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="col-md-12">
         <div class="add-product-box">
@@ -139,13 +193,13 @@
         <div class="product-table-wrapper">
           <table class="table product-table">
             <!-- <thead>
-              <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-              </tr>
-            </thead> -->
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                </tr>
+              </thead> -->
             <!-- <tbody> -->
             <tr class="product-table-header">
               <td>SKU</td>
@@ -164,29 +218,29 @@
               <td>{{orderItem.product.brand}}</td>
               <td>
                 <span ng-show="orderItem.product.listPrice">
-                    THB {{orderItem.product.listPrice | number}}
-                </span>
+                      THB {{orderItem.product.listPrice | number}}
+                    </span>
                 <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
-                    Set Price
-                </span>
+                      Set Price
+                    </span>
               </td>
               <td>{{orderItem.discount | percentage}}</td>
               <td>
                 <span ng-show="orderItem.product.listPrice">
                       THB {{netPrice = orderItem.product.listPrice * (1 - orderItem.discount) | number}}
-                  </span>
+                    </span>
                 <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
                       Set Price
-                  </span>
+                    </span>
               </td>
               <td>{{orderItem.quantity | number}}<img style="width:17px;height:17px;" src="/icons/icon_edit.svg" /></td>
               <td>
                 <span ng-show="orderItem.product.listPrice">
                       THB {{orderItem.quantity * netPrice | number}}
-                  </span>
+                    </span>
                 <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
                       Set Price
-                  </span>
+                    </span>
               </td>
               <td style="text-decoration: underline;">Remove Item</td>
             </tr>
@@ -202,58 +256,6 @@
           that refer to the cosmos and terms that describe the tools of the trade, the most prevalent being the telescope.
           So to get us off of first base, let’s define some of the key terms that pertain to telescopes to help you be able
           to talk to them more intelligently. </div>
-      </div>
-    </div>
-    <div class="summary-box">
-      <div class="row">
-        <div class="col-md-7" style="">
-          Estimated Delivery Date
-        </div>
-        <div class="col-md-5">
-          <input value="14-10-2016" class="summary-box-input" type="text" />
-        </div>
-      </div>
-      <div class="line"></div>
-      <div class="row summary-box-line-height">
-        <div class="col-md-7">
-          Sub-total
-        </div>
-        <div class="col-md-5" style="text-align:right;color:#8899AA;">
-          40.033
-        </div>
-      </div>
-      <div class="row summary-box-line-height">
-        <div class="col-md-7" style="">
-          Shipping
-        </div>
-        <div class="col-md-5">
-          <input value="0" class="summary-box-input" type="text" />
-        </div>
-      </div>
-      <div class="row summary-box-line-height">
-        <div class="col-md-7" style="">
-          Special Discount
-        </div>
-        <div class="col-md-5">
-          <input value="9999.99" class="summary-box-input" type="text" />
-        </div>
-      </div>
-      <div class="row summary-box-line-height">
-        <div class="col-md-7" style="">
-          Tax
-        </div>
-        <div class="col-md-5">
-          <input style="width: 35%;" value="7" class="summary-box-input" type="text" /><span style="color:#8899AA;">%  1,826.00</span>
-        </div>
-      </div>
-      <div class="line"></div>
-      <div class="row">
-        <div class="col-md-5" style="font-size: 14px;">
-          Total
-        </div>
-        <div class="col-md-7" style="font-size: 18px;text-align:right;font-weight:bold;">
-          THB 41,585.31
-        </div>
       </div>
     </div>
   </div>
