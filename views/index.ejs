@@ -99,10 +99,11 @@
         <div class="add-product-box">
           <div class="row">
             <div class="col-md-1" style="padding-top: 14px;width: 5%;padding-left: 28px;">
-              <img src="/icons/icon_plus.svg" style="height: 20.35px;	width: 20.35px;" />
+              <img ng-show="addProductTextbox.length == 0" src="/icons/icon_plus.svg" class="add-product-button" />
+              <img ng-show="addProductTextbox.length > 0" ng-click="addProductTextbox = ''" src="/icons/icon_plus.svg" class="add-product-button rotate-45-deg pointer" />
             </div>
             <div class="col-md-11">
-              <input ng-focus="showProductTextBoxOverlay()" ng-blur="hideProductTextBoxOverlay()" placeholder="Add Products" type="text" class="add-product-textbox" />
+              <input ng-model="addProductTextbox" ng-focus="showProductTextBoxOverlay()" ng-blur="hideProductTextBoxOverlay()" placeholder="Add Products" type="text" class="add-product-textbox" />
             </div>
           </div>
         </div>

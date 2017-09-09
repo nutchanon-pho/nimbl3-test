@@ -288,3 +288,15 @@ body {
   left: 0;
   z-index: 10;
 }
+
+.rotate-45-deg {
+  transform: rotate(45deg);
+}
+
+.add-product-button {
+  height: 20.35px;	width: 20.35px;
+}
+
+.pointer {
+  cursor: pointer;
+}

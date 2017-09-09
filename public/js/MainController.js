@@ -9,6 +9,7 @@ app.filter('percentage', ['$filter', function ($filter) {
 app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSerializer', function ($scope, $http, $cookies, $httpParamSerializer) {
     Ps.initialize(document.querySelector('.navmenu'));
 
+    $scope.addProductTextbox = '';
     $scope.currentActiveMenuIndex = 0;
 
     $scope.sideNavMenuList = [
