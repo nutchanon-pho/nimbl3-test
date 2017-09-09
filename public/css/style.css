@@ -172,7 +172,7 @@ body {
     color: #6C5E73;
 }
 
-@media (min-width: 1px) {
+@media (max-width: 768px) {
     .company-info-box-col {
         padding: 0px;
     }
@@ -237,7 +237,8 @@ body {
 }
 
 .company-info-select {
-    width: 100%;
+    /* width: 100%; */
+    max-width: 100%;
     background-color: white;
     color: #8899AA;
     font-weight: lighter;
@@ -280,6 +281,23 @@ body {
     vertical-align: middle;
 }
 
+@media (max-width: 992px) {
+    .add-product-box {
+        border-radius: 0px;
+        border-right: 0px;
+        border-left: 0px;
+    }
+    .add-product-textbox {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    .add-product-textbox {
+        font-size: 12px;
+    }
+}
+
 .add-product-box {
     height: 50px;
     margin-top: 17px;
@@ -292,8 +310,10 @@ body {
 
 .add-product-textbox {
     width: 100%;
-    height: 48px;
+    line-height: 44px;
     border: transparent;
+    font-weight: lighter;
+    color: #8899AA;
 }
 
 .add-product-textbox:focus {
@@ -440,4 +460,30 @@ body {
         font-size: 11px;
         line-height: 18px;
     }
+}
+
+@media (max-width: 992px) {
+    .mobile-nopadding {
+        padding: 0px !important;
+    }
+}
+
+::-webkit-input-placeholder {
+    /* Chrome */
+    color: #8899AA
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #8899AA
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #8899AA
+}
+
+:-moz-placeholder {
+    /* Firefox 4 - 18 */
+    color: #8899AA
 }
