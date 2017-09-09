@@ -133,10 +133,26 @@ app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSeri
         $http.get(`/orders/${orderId}`).then((result) => {
             console.log('getOrder result',result);
             $scope.order = result.data;
+        })
+        .catch((err) => {
+            alert('There is an error while retrieving order from the server.');
+            console.error(err);
+        });
+    };
+
+    $scope.getProducts = () => {
+        $http.get('/products').then((result) => {
+            console.log('getProducts result', result);
+            $scope.productList = result.data;
+        })
+        .catch((err) => {
+            alert('There is an error while retrieving products from the server.');
+            console.error(err);
         });
     };
 
     $scope.login().then(() => {
         $scope.getOrder(1);
+        $scope.getProducts();
     });
 }]);
