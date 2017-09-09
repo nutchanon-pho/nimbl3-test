@@ -255,3 +255,19 @@ body {
   color: red;
   text-decoration: underline;
 }
+
+.remark-box {
+  margin-top:2.82px;
+  font-weight: lighter;
+  color: #8899AA;
+  font-size: 11px;
+  line-height: 17px;
+  height: 82.96px;
+  border: 1px solid #D8D8D8;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 19px;
+  padding-right: 19px;
+}
