@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>nimbl3</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
@@ -13,7 +14,7 @@
 
 <body ng-app="nimbl3" ng-controller="MainController" style="background-color:#F4F7F8;" ng-cloak>
   <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-    <!-- <a class="navmenu-brand visible-md visible-lg" href="#">Project name</a> -->
+    <!-- <a class="navmenu-brand visible-lg visible-lg" href="#">Project name</a> -->
     <img class="navmenu-brand" src="/icons/logo-white.svg" />
     <ul class="nav navmenu-nav greeting-box">
       <li>
@@ -35,38 +36,34 @@
     </div>
   </div>
 
-  <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
-    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+  <div class="navbar navbar-default navbar-fixed-top hidden-lg hidden-lg" style="	height: 50px;z-index: 12;background-color:#702283;">
+    <img class="mobile-nav-toggle" data-toggle="offcanvas" data-target=".navmenu" src="/icons/arrow-gold.svg" />
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 order-header">
+    <div class="row hidden-xs hidden-sm hidden-md">
+      <div class="col-lg-12 col-md-12 order-header">
         <span class="order-text">Orders / </span><span class="order-number">{{order.orderNumber}}</span>
       </div>
     </div>
     <div class="row company-info-row">
-      <div class="col-md-9">
+      <div class="col-lg-9 col-md-9 company-info-box-col">
         <div class="company-info-box">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-6">
               <div class="company-info-name">{{order.account.name}}</div>
               <div class="company-info-address">{{order.account.address}}</div>
-              <div class="company-info-phone">{{order.account.phone}}</div>
+              <div class="company-info-phone hidden-xs hidden-sm hidden-md">{{order.account.phone}}</div>
             </div>
-            <div class="col-md-2 company-info-type">
+            <div class="col-lg-2 col-md-2 company-info-type hidden-xs">
               <div>Type</div>
               <div>
-                <select class="company-info-select">
-                  <option value="{{order.account.type}}">{{order.account.type}}</option>
-                </select>
+                <select class="company-info-select hidden-xs">
+                    <option value="{{order.account.type}}">{{order.account.type}}</option>
+                  </select>
               </div>
             </div>
-            <div class="col-md-2 company-info-type">
+            <div class="col-lg-2 col-md-2 company-info-type hidden-xs">
               <div>Owned By</div>
               <div>
                 <select class="company-info-select">
@@ -74,36 +71,116 @@
                   </select>
               </div>
             </div>
-            <div class="col-md-2 company-info-type">
+            <div class="col-lg-2 cold-md-2 company-info-type hidden-xs">
               <div>Status</div>
               <div>
                 <select class="company-info-select">
-                      <option value="{{order.status}}">{{order.status}}</option>
-                    </select>
+                    <option value="{{order.status}}">{{order.status}}</option>
+                  </select>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-3 top-button-area">
-        <div class="col-md-3">
+      <div class="col-lg-3 top-button-area hidden-xs">
+        <div class="col-lg-3">
           <div class="back-button">Back</div>
         </div>
-        <div class="col-md-9">
+        <div class="col-lg-9">
           <div class="update-order-button">Update Order</div>
         </div>
       </div>
     </div>
+    <div class="row visible-xs visible-sm" style="margin-top:25px;">
+      <div class="col-xs-12">
+        <div class="update-order-button">Update Order</div>
+      </div>
+    </div>
+    <div class="row visible-xs visible-sm" style="margin-top:25px;">
+      <div class="col-xs-12 company-info-type visible-xs visible-sm">
+        <div>Owned By</div>
+        <div>
+          <select class="company-info-select">
+              <option value="{{order.account.ownedBy}}">{{order.account.ownedBy}}</option>
+            </select>
+        </div>
+      </div>
+    </div>
+    <div class="row visible-xs visible-sm" style="margin-top:25px;">
+      <div class="col-xs-12 company-info-type visible-xs visible-sm">
+        <div>Status</div>
+        <div>
+          <select class="company-info-select">
+              <option value="{{order.status}}">{{order.status}}</option>
+            </select>
+        </div>
+      </div>
+    </div>
+    <div class="line visible-xs visible-sm" style="margin: 28px -15px 20px -15px;border: 1px solid #979797;	opacity: 0.2;"></div>
     <div class="row">
-      <div class="col-md-12">
+      <div class="summary-box">
+        <div class="row">
+          <div class="col-xs-7" style="">
+            Estimated Delivery Date
+          </div>
+          <div class="col-xs-5">
+            <input value="14-10-2016" class="summary-box-input" type="text" />
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="row summary-box-line-height">
+          <div class="col-xs-7">
+            Sub-total
+          </div>
+          <div class="col-xs-5" style="text-align:right;color:#8899AA;">
+            40.033
+          </div>
+        </div>
+        <div class="row summary-box-line-height">
+          <div class="col-xs-7" style="">
+            Shipping
+          </div>
+          <div class="col-xs-5">
+            <input value="0" class="summary-box-input" type="text" />
+          </div>
+        </div>
+        <div class="row summary-box-line-height">
+          <div class="col-xs-7" style="">
+            Special Discount
+          </div>
+          <div class="col-xs-5">
+            <input value="9999.99" class="summary-box-input" type="text" />
+          </div>
+        </div>
+        <div class="row summary-box-line-height">
+          <div class="col-xs-7" style="">
+            Tax
+          </div>
+          <div class="col-xs-5">
+            <input style="width: 35%;" value="7" class="summary-box-input" type="text" /><span style="color:#8899AA;">%  1,826.00</span>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="row">
+          <div class="col-xs-5" style="font-size: 14px;">
+            Total
+          </div>
+          <div class="col-xs-7" style="font-size: 18px;text-align:right;font-weight:bold;">
+            THB 41,585.31
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 mobile-nopadding">
         <div class="add-product-box">
           <div class="row">
-            <div class="col-md-1" style="padding-top: 14px;width: 5%;padding-left: 28px;">
+            <div class="col-lg-1 col-xs-1" style="padding-top: 14px;width: 5%;padding-left: 28px;">
               <img ng-show="addProductTextbox.length == 0" src="/icons/icon_plus.svg" class="add-product-button" />
               <img ng-show="addProductTextbox.length > 0" ng-click="addProductTextbox = ''" src="/icons/icon_plus.svg" class="add-product-button rotate-45-deg pointer"
               />
             </div>
-            <div class="col-md-11">
+            <div class="col-lg-11 col-xs-10">
               <input ng-model="addProductTextbox" ng-focus="showProductTextBoxOverlay()" ng-blur="hideProductTextBoxOverlay()" placeholder="Add Products"
                 type="text" class="add-product-textbox" />
             </div>
@@ -112,18 +189,18 @@
       </div>
     </div>
     <div class="add-product-textbox-overlay" style="display:none;"></div>
-    <div class="row product-table-row">
-      <div class="col-md-12">
+    <div class="row product-table-row hidden-xs hidden-sm hidden-md">
+      <div class="col-lg-12">
         <div class="product-table-wrapper">
           <table class="table product-table">
             <!-- <thead>
-              <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-              </tr>
-            </thead> -->
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                </tr>
+              </thead> -->
             <!-- <tbody> -->
             <tr class="product-table-header">
               <td>SKU</td>
@@ -142,29 +219,29 @@
               <td>{{orderItem.product.brand}}</td>
               <td>
                 <span ng-show="orderItem.product.listPrice">
-                    THB {{orderItem.product.listPrice | number}}
-                </span>
+                      THB {{orderItem.product.listPrice | number}}
+                    </span>
                 <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
-                    Set Price
-                </span>
+                      Set Price
+                    </span>
               </td>
               <td>{{orderItem.discount | percentage}}</td>
               <td>
                 <span ng-show="orderItem.product.listPrice">
                       THB {{netPrice = orderItem.product.listPrice * (1 - orderItem.discount) | number}}
-                  </span>
+                    </span>
                 <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
                       Set Price
-                  </span>
+                    </span>
               </td>
               <td>{{orderItem.quantity | number}}<img style="width:17px;height:17px;" src="/icons/icon_edit.svg" /></td>
               <td>
                 <span ng-show="orderItem.product.listPrice">
                       THB {{orderItem.quantity * netPrice | number}}
-                  </span>
+                    </span>
                 <span ng-show="!orderItem.product.listPrice" class="product-table-set-price">
                       Set Price
-                  </span>
+                    </span>
               </td>
               <td style="text-decoration: underline;">Remove Item</td>
             </tr>
@@ -173,7 +250,7 @@
       </div>
     </div>
     <div class="row" style="margin-top:14px;margin-bottom:300px;">
-      <div class="col-md-12">
+      <div class="col-lg-12">
         <div style="font-size:12px;">Remark</div>
         <div class="remark-box">When you enter into any new area of science, you almost always find yourself with a baffling new language of technical
           terms to learn before you can converse with the experts. This is certainly true in astronomy both in terms of terms
@@ -181,58 +258,6 @@
           So to get us off of first base, let’s define some of the key terms that pertain to telescopes to help you be able
           to talk to them more intelligently. </div>
       </div>
-    </div>
-    <div class="summary-box">
-      <div class="row">
-        <div class="col-md-7" style="">
-          Estimated Delivery Date
-        </div>
-        <div class="col-md-5">
-          <input value="14-10-2016" class="summary-box-input" type="text" />
-        </div>
-      </div>
-      <div class="line"></div>
-      <div class="row summary-box-line-height">
-        <div class="col-md-7">
-          Sub-total
-        </div>
-        <div class="col-md-5" style="text-align:right;color:#8899AA;">
-          40.033
-        </div>
-      </div>
-      <div class="row summary-box-line-height">
-        <div class="col-md-7" style="">
-          Shipping
-        </div>
-        <div class="col-md-5">
-          <input value="0" class="summary-box-input" type="text" />
-        </div>
-      </div>
-      <div class="row summary-box-line-height">
-        <div class="col-md-7" style="">
-          Special Discount
-        </div>
-        <div class="col-md-5">
-          <input value="9999.99" class="summary-box-input" type="text" />
-        </div>
-      </div>
-      <div class="row summary-box-line-height">
-        <div class="col-md-7" style="">
-          Tax
-        </div>
-        <div class="col-md-5">
-          <input style="width: 35%;" value="7" class="summary-box-input" type="text" /><span style="color:#8899AA;">%  1,826.00</span>
-        </div>
-      </div>
-      <div class="line"></div>
-      <div class="row">
-          <div class="col-md-5" style="font-size: 14px;">
-            Total
-          </div>
-          <div class="col-md-7" style="font-size: 18px;text-align:right;font-weight:bold;">
-            THB 41,585.31
-          </div>
-        </div>
     </div>
   </div>
 </body>
