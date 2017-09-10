@@ -213,7 +213,7 @@
               <td>TOTAL</td>
               <td></td>
             </tr>
-            <tr class="product-table-body" ng-repeat="orderItem in order.orderItems">
+            <tr class="product-table-body" ng-class-even="'table-stripe'" ng-repeat="orderItem in order.orderItems">
               <td style="	color: #64707C;font-weight:normal;">{{orderItem.product.sku}}</td>
               <td>{{orderItem.product.description}}</td>
               <td>{{orderItem.product.brand}}</td>

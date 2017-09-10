@@ -500,3 +500,7 @@ body {
     /* Firefox 4 - 18 */
     color: #8899AA
 }
+
+.table-stripe {
+    background-color: #F8F8F8;
+}
