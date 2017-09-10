@@ -54,9 +54,9 @@
             <div class="col-lg-6 col-md-6">
               <div class="company-info-name">{{order.account.name}}</div>
               <div class="company-info-address">{{order.account.address}}</div>
-              <div class="company-info-phone hidden-xs hidden-sm hidden-md">{{order.account.phone}}</div>
+              <div class="company-info-phone hidden-xs hidden-sm">{{order.account.phone}}</div>
             </div>
-            <div class="col-lg-2 col-md-2 company-info-type hidden-xs hidden-sm hidden-md">
+            <div class="col-xs-2 company-info-type hidden-xs hidden-sm">
               <div>Type</div>
               <div>
                 <select class="company-info-select">
@@ -64,7 +64,7 @@
                   </select>
               </div>
             </div>
-            <div class="col-lg-2 col-md-2 company-info-type hidden-xs hidden-sm hidden-md">
+            <div class="col-xs-2 company-info-type hidden-xs hidden-sm">
               <div>Owned By</div>
               <div>
                 <select class="company-info-select">
@@ -72,7 +72,7 @@
                   </select>
               </div>
             </div>
-            <div class="col-lg-2 cold-md-2 company-info-type hidden-xs hidden-sm hidden-md">
+            <div class="col-xs-2 company-info-type hidden-xs hidden-sm">
               <div>Status</div>
               <div>
                 <select class="company-info-select">
@@ -83,11 +83,11 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 top-button-area hidden-xs hidden-sm hidden-md">
-        <div class="col-lg-3">
+      <div class="col-xs-3 top-button-area hidden-xs hidden-sm">
+        <div class="col-xs-3">
           <div class="back-button">Back</div>
         </div>
-        <div class="col-lg-9">
+        <div class="col-xs-9">
           <div class="update-order-button">Update Order</div>
         </div>
       </div>
@@ -173,7 +173,6 @@
       </div>
     </div>
     <div class="row">
-      <!-- <div class="col-lg-12 mobile-nopadding"> -->
         <div class="add-product-box">
           <div class="col-lg-1 col-xs-1" style="padding-top: 14px;width: 5%;">
             <img ng-show="addProductTextbox.length == 0" src="/icons/icon_plus.svg" class="add-product-button" />
@@ -185,10 +184,31 @@
               type="text" class="add-product-textbox" />
           </div>
         </div>
-      <!-- </div> -->
+    </div>
+    <div id="product-search-result" class="row product-table-row" style="margin-top: -1px;display:none;">
+      <div class="col-lg-12">
+        <div class="product-table-wrapper table-responsive" style="position: absolute;z-index: 11;width: 96.9%;">
+          <table class="table product-table">
+            <tr class="product-table-body" ng-class-even="'table-stripe'" ng-repeat="product in productList | filter:addProductTextbox">
+              <td style="color: #64707C;font-weight:normal;">{{product.sku}}</td>
+              <td style="width: 31%;">{{product.description}}</td>
+              <td>{{product.brand}}</td>
+              <td>
+                <span ng-show="product.listPrice">
+                      THB {{product.listPrice | number}}
+                    </span>
+                <span ng-show="!product.listPrice" class="product-table-set-price">
+                      Set Price
+                    </span>
+              </td>
+              <td style="text-align:right;"><input value="1" class="summary-box-input" type="text" style="width: 20%;" /> <span style="padding: 6px 7px 22px 7px;display: inline-block;height: 22px;margin-top: -3px;" class="update-order-button">Add</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
     <div class="add-product-textbox-overlay" style="display:none;"></div>
-    <div class="row visible-xs" style="margin-top:14px;">
+    <div class="row visible-xs visible-sm" style="margin-top:14px;">
       <div class="col-lg-12 remark-box">
         <div style="color: #626272;	font-size: 14px;	line-height: 18px;">Remark</div>
         <div>When you enter into any new area of science, you almost always find yourself with a baffling new language of technical
