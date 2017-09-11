@@ -161,10 +161,12 @@ app.controller('MainController', ['$scope', '$http', '$cookies', '$httpParamSeri
 
     $scope.showProductTextBoxOverlay = () => {
         angular.element('.add-product-textbox-overlay').show();
+        angular.element('#product-search-result').show();
     };
 
     $scope.hideProductTextBoxOverlay = () => {
         angular.element('.add-product-textbox-overlay').hide();
+        angular.element('#product-search-result').hide();
     };
 
     $scope.login().then(() => {
