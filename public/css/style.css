@@ -1,5 +1,6 @@
 body {
     font-family: 'montserrat', Arial, sans-serif;
+    background-color:#F4F7F8;
 }
 
 html,
@@ -22,6 +23,10 @@ body {
 .navbar {
     display: block;
     text-align: center;
+    width:100vw;
+    height: 50px;
+    z-index: 12;
+    background-color:#702283;
 }
 
 .navbar-brand {
@@ -503,4 +508,90 @@ body {
 
 .table-stripe {
     background-color: #F8F8F8;
+}
+
+.mobile-nav-header {
+    color:white;
+    font-weight:lighter;
+    font-size:15px;
+    height: 50px;
+    vertical-align: middle;
+    display: table-cell;
+    width: 100vw;
+}
+
+.mobile-nav-search {
+    width: 17px;
+    height: 17px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
+
+.mobile-row-margin-top{
+    margin-top:25px;
+}
+
+.line-content {
+    margin: 28px -15px 20px -15px;border: 1px solid #979797;	opacity: 0.2;
+}
+
+.summary-box-right-column {
+    color:#8899AA;
+    text-align:right;
+}
+
+.summary-box-total-left-column {
+    font-size: 14px;
+}
+
+.summary-box-total-right-column {
+    font-size: 18px;
+    text-align:right;
+    font-weight:bold;
+}
+
+.add-product-button-col {
+    padding-top: 14px;
+    width: 5%;
+}
+
+#product-search-result {
+    margin-top: -1px;
+    display:none;
+}
+
+.product-search-result-table-wrapper {
+    position: absolute;
+    z-index: 11;
+    width: 96.9%;
+}
+
+.product-search-result-add-button {
+    padding: 6px 7px 22px 7px;
+    display: inline-block;
+    height: 22px;
+    margin-top: -3px;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.mobile-remark {
+    color: #626272;	
+    font-size: 14px;	
+    line-height: 18px;
+}
+
+.product-table-body td:first-child {
+    color: #64707C;
+    font-weight:normal;
+}
+
+.mobile-powered-by {
+    text-align:center;
+    height: 66px;		
+    background-color: #702283; 
+    padding-top:10px;
 }
